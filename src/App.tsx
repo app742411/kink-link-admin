@@ -35,7 +35,7 @@ export default function App() {
         <Routes>
           <Route element={<ProtectedRoute />}>
             <Route element={<AppLayout />}>
-              <Route path="/admin" element={<Home />} />
+              <Route path="/" index element={<Home />} />
 
               {/* Others Page */}
               <Route path="/profile" element={<UserProfiles />} />
