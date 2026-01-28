@@ -10,6 +10,14 @@ export type User = {
     isBlocked: boolean;
     isOnline: boolean;
     createdAt: string;
+    businessProfile?: {
+        businessName?: string;
+        profileImg?: string;
+    };
+
+    personProfile?: {
+        profileImg?: string;
+    };
 };
 
 // Response type for GET /api/admin/users

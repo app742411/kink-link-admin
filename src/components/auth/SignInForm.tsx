@@ -82,7 +82,7 @@ export default function SignInForm() {
         <div className="mb-6 text-center">
           <img
             className="mx-auto mb-4"
-            src="/images/logo/Mainlogo.png"
+            src="../../images/logo/Mainlogo.png"
             alt="Logo"
             width={150}
           />
