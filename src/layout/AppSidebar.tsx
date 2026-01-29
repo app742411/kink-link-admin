@@ -3,14 +3,20 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
+  AlertHexaIcon,
   // BoxCubeIcon,
+  BoltIcon,
   // CalenderIcon,
+  ChatIcon,
   ChevronDownIcon,
+  DocsIcon,
+  DollarLineIcon,
   GridIcon,
   HorizontaLDots,
   ListIcon,
+  LockIcon,
   // PageIcon,
-  // PieChartIcon,
+  PieChartIcon,
   // PlugInIcon,
   // TableIcon,
   UserCircleIcon,
@@ -31,11 +37,6 @@ const navItems: NavItem[] = [
     name: "Dashboard",
     path: "/",
   },
-  // {
-  //   icon: <CalenderIcon />,
-  //   name: "Calendar",
-  //   path: "/calendar",
-  // },
   {
     icon: <UserCircleIcon />,
     name: "User Profile",
@@ -54,55 +55,90 @@ const navItems: NavItem[] = [
     name: "Interest Management",
     path: "/interests",
   },
-  // {
-  //   name: "Forms",
-  //   icon: <ListIcon />,
-  //   subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  // },
-  // {
-  //   name: "Tables",
-  //   icon: <TableIcon />,
-  //   subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  // },
-  // {
-  //   name: "Pages",
-  //   icon: <PageIcon />,
-  //   subItems: [
-  //     { name: "Blank Page", path: "/blank", pro: false },
-  //     { name: "404 Error", path: "/error-404", pro: false },
-  //   ],
-  // },
+  {
+    icon: <AlertHexaIcon />,
+    name: "Moderation",
+    subItems: [
+      { name: "Photos & Bios", path: "/moderation/photos-bios", pro: false },
+      { name: "Posts & Forums", path: "/moderation/posts-forums", pro: false },
+      { name: "Flagged Content", path: "/moderation/flagged", pro: false },
+      { name: "Deletion Log", path: "/moderation/deletion-log", pro: false },
+    ],
+  },
+  {
+    icon: <ChatIcon />,
+    name: "Events",
+    subItems: [
+      // Used ChatIcon as placeholder for Events/Calendar if CalenderIcon is commented out or re-imported
+      { name: "All Events", path: "/events/all", pro: false },
+      { name: "Reports", path: "/events/reports", pro: false },
+      { name: "Cancellations", path: "/events/cancellations", pro: false },
+      { name: "Compliance", path: "/events/compliance", pro: false },
+    ],
+  },
+  {
+    icon: <ChatIcon />,
+    name: "Messages",
+    subItems: [
+      { name: "Flagged Messages", path: "/messages/flagged", pro: false },
+      { name: "Alerts", path: "/messages/alerts", pro: false },
+      { name: "Admin Messages", path: "/messages/admin", pro: false },
+      { name: "Broadcasts", path: "/messages/broadcasts", pro: false },
+    ],
+  },
+  {
+    icon: <DocsIcon />,
+    name: "Reports",
+    subItems: [
+      { name: "Inbox", path: "/reports/inbox", pro: false },
+      { name: "Actions", path: "/reports/actions", pro: false },
+      { name: "Resolution", path: "/reports/resolution", pro: false },
+      { name: "Escalations", path: "/reports/escalations", pro: false },
+    ],
+  },
+  {
+    icon: <DollarLineIcon />,
+    name: "Payments",
+    subItems: [
+      { name: "Subscriptions", path: "/payments/subscriptions", pro: false },
+      { name: "Premium Users", path: "/payments/premium", pro: false },
+      { name: "Transactions", path: "/payments/transactions", pro: false },
+      { name: "Refunds", path: "/payments/refunds", pro: false },
+    ],
+  },
+  {
+    icon: <PieChartIcon />,
+    name: "Analytics",
+    subItems: [
+      { name: "Users", path: "/analytics/users", pro: false },
+      { name: "Content & Events", path: "/analytics/content", pro: false },
+      { name: "Revenue", path: "/analytics/revenue", pro: false },
+      { name: "System Health", path: "/analytics/system", pro: false },
+    ],
+  },
 ];
 
 const othersItems: NavItem[] = [
-  // {
-  //   icon: <PieChartIcon />,
-  //   name: "Charts",
-  //   subItems: [
-  //     { name: "Line Chart", path: "/line-chart", pro: false },
-  //     { name: "Bar Chart", path: "/bar-chart", pro: false },
-  //   ],
-  // },
-  // {
-  //   icon: <BoxCubeIcon />,
-  //   name: "UI Elements",
-  //   subItems: [
-  //     { name: "Alerts", path: "/alerts", pro: false },
-  //     { name: "Avatar", path: "/avatars", pro: false },
-  //     { name: "Badge", path: "/badge", pro: false },
-  //     { name: "Buttons", path: "/buttons", pro: false },
-  //     { name: "Images", path: "/images", pro: false },
-  //     { name: "Videos", path: "/videos", pro: false },
-  //   ],
-  // },
-  // {
-  //   icon: <PlugInIcon />,
-  //   name: "Authentication",
-  //   subItems: [
-  //     { name: "Sign In", path: "/signin", pro: false },
-  //     { name: "Sign Up", path: "/signup", pro: false },
-  //   ],
-  // },
+  {
+    icon: <BoltIcon />,
+    name: "Settings",
+    subItems: [
+      { name: "FAQs", path: "/settings/faqs", pro: false },
+      { name: "Branding", path: "/settings/branding", pro: false },
+      { name: "Templates", path: "/settings/templates", pro: false },
+      { name: "Security", path: "/settings/security", pro: false },
+      { name: "Admin Roles", path: "/settings/admin-roles", pro: false },
+    ],
+  },
+  {
+    icon: <LockIcon />,
+    name: "Logs",
+    subItems: [
+      { name: "Admin Actions", path: "/logs/admin-actions", pro: false },
+      { name: "Profile Changes", path: "/logs/profile-changes", pro: false },
+      { name: "IP & Logins", path: "/logs/ip-logins", pro: false },
+    ],
+  },
 ];
 
 const AppSidebar: React.FC = () => {
