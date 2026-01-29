@@ -187,6 +187,7 @@ layer(base);
   }
   body {
     @apply relative font-normal font-outfit z-1 bg-gray-50;
+	overflow-x: hidden;
   }
   /* Background image layer */
 body::before {
